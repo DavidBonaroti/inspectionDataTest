@@ -1,0 +1,58 @@
+<div class="jumbrotron text-center">
+  <h1>Restaurant Data</h1>
+</div>
+
+<div class="select_menu">
+  <label>Select Cuisine</label>
+  <select name="select_cuisine" id="select_cuisine">
+    <option value="chinese">Chinese</option>
+    <option value="american">American</option>
+    <option value="caribbean">Caribbean</option>
+    <option value="irish">Irish</option>
+    <option value="creole">Creole</option>
+    <option value="pizza">Pizza</option>
+  </select>
+  <label>Select Boro</label>
+  <select name="select_boro" id="select_boro">
+    <option value="manhattan">Manhattan</option>
+    <option value="brooklyn">Brooklyn</option>
+    <option value="bronx">Bronx</option>
+    <option value="queens">Queens</option>
+    <option value="si">Staten Island</option>
+  </select>
+  <label>Select Grade</label>
+  <select name="select_grade" id="select_grade">
+    <option value="a">A only</option>
+    <option value="b">A and B</option>
+    <option value="c">A, B, and C</option>
+  </select>
+</div>
+
+<div class="table_data">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Cuisine</th>
+        <th>Street</th>
+        <th>Boro</th>
+        <th>Score</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <% for (var data of datas) { %>
+        <tr>
+          <td><%= data.DBA %></td>
+          <td><%= data.CUISINE_DESCRIPTION %></td>
+          <td><%= data.STREET %></td>
+          <td><%= data.BORO %></td>
+          <td><%= data.SCORE %></td>
+          <td><%= data.GRADE %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
