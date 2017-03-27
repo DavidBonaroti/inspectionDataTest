@@ -1,32 +1,37 @@
 <div class="jumbrotron text-center">
-  <h1>Restaurant Data</h1>
+  <h4><%= greeting %></h4>
 </div>
 
-<div class="select_menu">
+<div class="select-menu">
+  <form method="GET" action="/data">
   <label>Select Cuisine</label>
-  <select name="select_cuisine" id="select_cuisine">
-    <option value="chinese">Chinese</option>
-    <option value="american">American</option>
-    <option value="caribbean">Caribbean</option>
-    <option value="irish">Irish</option>
-    <option value="creole">Creole</option>
-    <option value="pizza">Pizza</option>
+  <select class="selectpicker" name="select_cuisine" id="select_cuisine">
+    <option value="Chinese">Chinese</option>
+    <option value="American">American</option>
+    <option value="Caribbean">Caribbean</option>
+    <option value="Irish">Irish</option>
+    <option value="Creole">Creole</option>
+    <option value="Pizza">Pizza</option>
   </select>
   <label>Select Boro</label>
-  <select name="select_boro" id="select_boro">
-    <option value="manhattan">Manhattan</option>
-    <option value="brooklyn">Brooklyn</option>
-    <option value="bronx">Bronx</option>
-    <option value="queens">Queens</option>
-    <option value="si">Staten Island</option>
+  <select class="selectpicker" name="select_boro" id="select_boro">
+    <option value="MANHATTAN">Manhattan</option>
+    <option value="BROOKLYN">Brooklyn</option>
+    <option value="BRONX">Bronx</option>
+    <option value="QUEENS">Queens</option>
+    <option value="STATEN ISLAND">Staten Island</option>
   </select>
   <label>Select Grade</label>
-  <select name="select_grade" id="select_grade">
-    <option value="a">A only</option>
-    <option value="b">A and B</option>
-    <option value="c">A, B, and C</option>
+  <select class="selectpicker" name="select_grade" id="select_grade">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
   </select>
+
+  <input type="submit" value="Search" />
+  </form>
 </div>
+
 
 <div class="table_data">
   <table class="table table-bordered table-hover table-striped">
@@ -43,14 +48,14 @@
 
     <tbody>
 
-      <% for (var data of datas) { %>
+      <% for (i = 0; i < 5; i++) { %>
         <tr>
-          <td><%= data.DBA %></td>
-          <td><%= data.CUISINE_DESCRIPTION %></td>
-          <td><%= data.STREET %></td>
-          <td><%= data.BORO %></td>
-          <td><%= data.SCORE %></td>
-          <td><%= data.GRADE %></td>
+          <td><%= datas[i].DBA %></td>
+          <td><%= datas[i].CUISINE_DESCRIPTION %></td>
+          <td><%= datas[i].STREET %></td>
+          <td><%= datas[i].BORO %></td>
+          <td><%= datas[i].SCORE %></td>
+          <td><%= datas[i].GRADE %></td>
         </tr>
       <% } %>
     </tbody>

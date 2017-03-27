@@ -23,3 +23,13 @@ body {
   background: #222;
   color: #999;
 }
+
+.selectpicker {
+  padding: 10px;
+  margin: 20px;
+}
+
+.select-menu {
+  padding: 20px;
+  margin: 20px;
+}
